@@ -2,6 +2,18 @@
 require('CONFIG.php');
 require_once('includes/functions.php');
 require('includes/header.php');
+
+//Which posts are we trying to view?
+//url will be like single.php?post_id=X
+if( isset( $_GET['post_id'] ) ){
+	$post_id = filter_var( $_GET['post_id'], FILTER_SANITIZE_NUMBER_INT );
+	//make sure it isn't blank
+	if( $post_id == '' ){
+		$post_id = 0;
+	}
+}else{
+	$post_id = 0;
+}
  ?>
 	<main class="content">
 		<?php //1. Write it. get all published posts, newest first
@@ -12,19 +24,18 @@ require('includes/header.php');
 								WHERE posts.is_published = 1
 								AND users.user_id = posts.user_id
 								AND categories.category_id = posts.category_id
+								AND posts.post_id = ?
 								ORDER BY posts.date DESC
-								LIMIT 20');
+								LIMIT 1');
 		//2. Run it.
-		$result->execute();
+		$result->execute( array( $post_id ) );
 		//3. Check it. did we find any posts?
 		if( $result->rowCount() >= 1 ){ 
 			//loop it - once per row
 			while( $row = $result->fetch() ){
 		 ?>
 		<div class="one-post">
-			<a href="single.php?post_id=<?php echo $row['post_id']; ?>">
-			<img src="<?php echo $row['image']; ?>" />
-			</a>
+			<img src="<?php echo $row['image']; ?>">
 
 			<span class="author">
 				<img src="<?php echo $row['profile_pic']; ?>" width="50" height="50" />

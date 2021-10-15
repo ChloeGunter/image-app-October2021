@@ -1,6 +1,5 @@
 TODO
 ----
-* Add the single post template
 * Add a default user picture for users with a null image
 
 DONE
@@ -18,3 +17,4 @@ DONE
 - a count of posts in each category
 - posts with recent comments in the sidebar
 * add the debug output at the bottom of the page
+* Add the single post template
