@@ -58,6 +58,15 @@ function count_comments( $id = 0 ){
 
     }
 
+}//end function
+
+//Display the user's profile pic with a default fallback
+function show_profile_pic( $profile_pic, $size = 50 ){
+    // if blank, get the default
+    if( $profile_pic == '' ){
+        $profile_pic = 'images/default-user.png';
+    }
+    echo "<img src='$profile_pic' width='$size' height='$size' />";
 }
 
 

@@ -15,7 +15,7 @@
 		<ul>
 			<?php while( $row = $result->fetch() ){ ?>
 			<li class="user">
-				<img src="<?php echo $row['profile_pic']; ?>" width="50" height="50" />
+				<?php show_profile_pic( $row['profile_pic'], 40 ); ?>
 				<?php echo $row['username']; ?>
 			</li>
 			<?php } ?>
