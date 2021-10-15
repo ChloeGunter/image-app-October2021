@@ -1,6 +1,6 @@
 <?php 
 
-//display any ugly time stamp as a nice looking date
+//display any ugly timestamp as a nice looking date
 function nice_date( $date ){
 	$nice_date = new DateTime( $date );
 	echo $nice_date->format( 'l, F jS, Y' );
@@ -35,6 +35,29 @@ function time_ago($datetime, $full = false) {
 
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
+
+
+//Count the number of approved comments on any post.
+function count_comments( $id = 0 ){
+    //tell the function to use the DB connection from the global scope.
+    global $DB;
+    //write the query.
+    $result = $DB->prepare('SELECT COUNT(*) AS total
+                            FROM comments
+                            WHERE post_id = ?');
+    //run it. bind the data to the placeholders.
+    $result->execute( array( $id ) );
+    //check it.
+    if( $result->rowCount() >= 1 ){
+        //loop it.
+        while( $row = $result->fetch() ){
+            //return the count
+            echo $row['total'];
+        }
+
+    }
+
 }
 
 

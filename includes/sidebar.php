@@ -26,9 +26,12 @@
 
 	<?php 
 	//get up to 20 categories in alphabetical order by name
-	$result = $DB->prepare('SELECT name
-							FROM categories
-							ORDER BY category_id ASC
+	$result = $DB->prepare('SELECT categories.name, COUNT(*) AS total
+							FROM posts, categories
+							WHERE categories.category_id = posts. category_id
+							GROUP BY posts.category_id
+
+							ORDER BY categories.name ASC
 							LIMIT 20');
 	//run it.
 	$result->execute();
@@ -39,7 +42,7 @@
 		<h3>Categories</h3>
 		<ul>
 			<?php while( $row = $result->fetch() ){ ?>
-			<li><?php echo $row['name']; ?> - X posts</li>
+			<li><?php echo $row['name']; ?> - <?php echo $row['total']; ?> posts</li>
 			<?php } ?>
 		</ul>
 	</section>
