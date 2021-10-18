@@ -1,6 +1,6 @@
 TODO
 ----
-* create and parse the "add comment" form
+
 
 DONE
 ----
@@ -20,3 +20,4 @@ DONE
 * Add the single post template
 * Add a default user picture for users with a null image
 * Add the comments list to the single.php template
+* create and parse the "add comment" form

@@ -70,5 +70,27 @@ function show_profile_pic( $profile_pic, $size = 50 ){
 }
 
 
+//display any form's feedback
+function show_feedback( &$message = '', &$class = 'error', 
+                        &$bullets = array() ){
+    if( isset( $message ) ){
+    ?>
+    <div class="feedback <?php echo $class; ?>">
+        <h2><?php echo $message; ?></h2>
+        <?php if( !empty( $bullets ) ){ ?>
+        <ul>
+            <?php 
+            foreach( $bullets AS $bullet ){
+                echo "<li>$bullet</li>";
+            } ?>
+        </ul>
+        <?php } ?>
+    </div>
+    <?php
+    } //end if message exists
+
+}
+
+
 
 //no clos php
