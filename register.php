@@ -1,12 +1,14 @@
 <?php 
 require('CONFIG.php'); 
 require_once('includes/functions.php');
-
+require('includes/register-parse.php');
 //doctype and visible header
 require('includes/header.php');
 ?>
 <main class="container">
 	<h1>Create an Account</h1>
+
+	<?php show_feedback( $feedback, $feedback_class, $errors ); ?>
 
 	<form method="post" action="register.php">
 		<label>Username:</label>
