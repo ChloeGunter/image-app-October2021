@@ -106,6 +106,27 @@ function debug_statement($sth){
     }
 }
 
+// Display a variable if it exists (prevents warnings)
+function echo_if_exists( &$var ){
+    if( isset( $var ) ){
+        echo $var;
+    }
+}
+
+/* make checkboxes "stick" */
+function checked( &$thing1, $thing2 ){
+    if( $thing1 == $thing2 ){
+        echo 'checked';
+    }
+}
+
+/* make select dropdowns "stick" */
+function selected( &$thing1, $thing2 ){
+    if( $thing1 == $thing2 ){
+        echo 'selected';
+    }
+}
+
 
 
 //no clos php
