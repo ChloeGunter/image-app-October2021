@@ -2,6 +2,7 @@ TODO
 ----
 * Add Login and parse
 * Add login aurthentication to certain features (commenting, new post etc)
+* Add log out feature
 
 DONE
 ----

@@ -3,7 +3,7 @@ require('CONFIG.php');
 require_once('includes/functions.php');
 require('includes/register-parse.php');
 //doctype and visible header
-require('includes/header.php');
+require('includes/header-no-nav.php');
 ?>
 <main class="container">
 	<h1>Create an Account</h1>
