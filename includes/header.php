@@ -1,3 +1,6 @@
+<?php 
+$logged_in_user = check_login();
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,10 +26,17 @@
 				<input type="submit" name="search">
 				<input type="hidden" name="page" value="1">
 			</form>
-
 			<ul class="menu">
+			<?php if( ! $logged_in_user ){ ?>
 				<li><a href="register.php">Sign Up</a></li>
 				<li><a href="login.php">Log In</a></li>
+
+			<?php }else{ ?>
+
+				<li><a href="#">Add New Post</a></li>
+				<li><a href="#"><?php echo $logged_in_user['username']; ?>'s Account</a></li>
+				<li><a href="#">Log Out</a></li>
+			<?php } ?>
 			</ul>
 		</nav>
 	</header>

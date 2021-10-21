@@ -1,7 +1,5 @@
 TODO
 ----
-* Add Login and parse
-* Add login aurthentication to certain features (commenting, new post etc)
 * Add log out feature
 
 DONE
@@ -27,3 +25,5 @@ DONE
 * build the search.php for the results page
 * add pagination to "flip" through the results
 * Add Register form and parse new user accounts
+* Add Login and parse
+* Add login authentication to certain features (commenting, new post etc)
