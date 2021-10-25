@@ -2,6 +2,7 @@
 
 //logout logic if they clicked the logout link
 if( isset( $_GET['action'] )  AND $_GET['action'] == 'logout' ){
+	//get the logged in user_id
 	if( isset( $_COOKIE['user_id'] ) ){
 		$user_id = $_COOKIE['user_id'];
 	}elseif( isset( $_SESSION['user_id'] ) ) {
@@ -9,7 +10,7 @@ if( isset( $_GET['action'] )  AND $_GET['action'] == 'logout' ){
 	}else {
 		$user_id = 0;
 	}
-	//remove the access token from this user's DB row
+	//Nullify the access_token from the user DB row
 	$result = $DB->prepare( 'UPDATE users
 							SET access_token = :token
 							WHERE user_id = :id

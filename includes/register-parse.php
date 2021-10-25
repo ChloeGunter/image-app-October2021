@@ -32,7 +32,7 @@ if( isset($_POST['did_register']) ){
 									LIMIT 1');
 
 			$result->execute( array( $username ) );
-			//if one row founf, the name is already taken
+			//if one row found, the name is already taken
 			if( $result->rowCount() >= 1 ){
 				$valid = false;
 				$errors['username'] = 'Sorry this username is already taken.';
