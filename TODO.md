@@ -1,6 +1,6 @@
 TODO
 ----
-
+* Build the edit post (step 2)
 
 DONE
 ----
@@ -28,3 +28,7 @@ DONE
 * Add Login and parse
 * Add login authentication to certain features (commenting, new post etc)
 * Add log out feature
+* Build the add-new-post uploader (step 1)
+
+
+
