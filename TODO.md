@@ -1,6 +1,8 @@
 TODO
 ----
 * Build the edit post (step 2)
+* Build a function to display post images at any size
+* Delete old posts
 
 DONE
 ----
