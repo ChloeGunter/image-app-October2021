@@ -23,7 +23,8 @@ require('includes/header.php');
 		 ?>
 		<div class="one-post">
 			<a href="single.php?post_id=<?php echo $row['post_id']; ?>">
-			<img src="<?php echo $row['image']; ?>" />
+<!-- 			<img src="<?php //echo $row['image']; ?>" /> -->
+			<?php show_post_image( $row['image'] ); ?>
 			</a>
 
 			<span class="author">

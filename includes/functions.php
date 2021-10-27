@@ -245,4 +245,14 @@ function get_RGB($iH, $iS, $iV) {
         'blue' => round($dB)
     );
 }
+
+
+function show_post_image( $image, $size = 'medium' ){
+    echo '<img src="uploads/' . $image . '_' . $size . '.jpg">';
+}
+
+
 //no close php
+
+
+
