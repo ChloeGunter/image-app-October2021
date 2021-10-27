@@ -1,8 +1,8 @@
 TODO
 ----
-* Build the edit post (step 2)
 * Build a function to display post images at any size
-* Delete old posts
+* Delete old post data with placeholder image
+* Add an 'edit' button to only the logged in user's posts* make the drop down stick on the categories
 
 DONE
 ----
@@ -31,6 +31,7 @@ DONE
 * Add login authentication to certain features (commenting, new post etc)
 * Add log out feature
 * Build the add-new-post uploader (step 1)
+* Build the edit post (step 2)
 
 
 
