@@ -1,6 +1,5 @@
 TODO
 ----
-* Make the drop down stick on the categories
 
 DONE
 ----
@@ -33,6 +32,7 @@ DONE
 * Build a function to display post images at any size
 * Delete old post data with placeholder image
 * Add an 'edit' button to only the logged in user's posts
+* Make the drop down stick on the categories
 
 
 
