@@ -1,5 +1,6 @@
 TODO
 ----
+* 
 
 DONE
 ----
@@ -33,6 +34,7 @@ DONE
 * Delete old post data with placeholder image
 * Add an 'edit' button to only the logged in user's posts
 * Make the drop down stick on the categories
+* Build the users' profile pages
 
 
 

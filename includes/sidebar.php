@@ -1,7 +1,7 @@
 <aside class="sidebar">
 	
 	<?php //get up to 5 users, newest first
-	$result = $DB->prepare('SELECT profile_pic, username
+	$result = $DB->prepare('SELECT profile_pic, username, user_id
 							FROM users
 							ORDER BY user_id DESC
 							LIMIT 5');
@@ -15,8 +15,10 @@
 		<ul>
 			<?php while( $row = $result->fetch() ){ ?>
 			<li class="user">
+				<a href="profile.php?user_id=<?php echo $row['user_id']; ?>">
 				<?php show_profile_pic( $row['profile_pic'], 40 ); ?>
 				<?php echo $row['username']; ?>
+				</a>
 			</li>
 			<?php } ?>
 		</ul>
