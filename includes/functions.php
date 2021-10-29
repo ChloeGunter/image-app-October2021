@@ -251,6 +251,47 @@ function show_post_image( $image, $size = 'medium' ){
     echo '<img src="uploads/' . $image . '_' . $size . '.jpg">';
 }
 
+//Count the number of likes on any post
+function count_likes( $post_id = 0 ){
+    global $DB;
+    $result = $DB->prepare('SELECT COUNT(DISTINCT user_id) AS total
+                            FROM likes
+                            WHERE post_id = ?');
+    $result->execute( array( $post_id ) );
+    $row = $result->fetch();
+    return $row['total'];
+}
+
+
+function like_interface( $post_id = 0, &$user_id = 0 ){
+    //does the logged_in_user like this post?
+    global $DB;
+    $result = $DB->prepare('SELECT * FROM likes
+                            WHERE user_id = :user_id
+                            AND post_id = :post_id
+                            LIMIT 1');
+    $result->execute( array(
+                        'user_id' => $user_id,
+                        'post_id' => $post_id,
+                    ) );
+    if( $result->rowCount() >= 1 ){
+        $class='you-like';
+    }else{
+        $class='not-liked';
+    }
+    if( $user_id < 1 ){
+        $class='not_logged_in';
+    }
+    ?>
+    <span class="like-interface">
+        <span class="<?php echo $class; ?>">
+            <span class="heart-button" data-postid="<?php echo$post_id; ?>">❤</span>
+            <?php echo count_likes( $post_id ); ?>
+        </span>
+    </span>
+    <?php
+}
+
 
 //no close php
 

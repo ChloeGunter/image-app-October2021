@@ -28,7 +28,7 @@ require('includes/header.php');
 
 			<?php 
 			//show this button if the logged in user is the author
-			if( $logged_in_user['user_id'] == $row['user_id'] ){ ?>
+			if( $logged_in_user AND $logged_in_user['user_id'] == $row['user_id'] ){ ?>
 			<br>
 			<a href="edit-post.php?post_id=<?php echo $row['post_id']; ?>" class="button button-outline">Edit</a>
 			<?php } ?>
@@ -38,6 +38,10 @@ require('includes/header.php');
 				<?php echo $row['username']; ?>
 			</span>
 
+			<div class="likes">
+				<?php like_interface( $row['post_id'], $logged_in_user['user_id'] ); ?>
+			</div>
+
 			<h2><?php echo $row['title']; ?></h2>
 			<p><?php echo $row['body']; ?></p>
 
@@ -45,7 +49,7 @@ require('includes/header.php');
 
 			<span class="date"><?php echo time_ago( $row['date']); ?></span>
 
-			<span class="comment-count"><?php count_comments( $row['post_id'] ); ?></span>
+			<span class="comment-count"><?php echo count_comments( $row['post_id'] ); ?></span>
 		</div>
 
 		<?php 

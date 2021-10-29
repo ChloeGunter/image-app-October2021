@@ -1,6 +1,6 @@
 TODO
 ----
-* 
+* Add 'follows'
 
 DONE
 ----
@@ -35,6 +35,7 @@ DONE
 * Add an 'edit' button to only the logged in user's posts
 * Make the drop down stick on the categories
 * Build the users' profile pages
+* Add 'likes'
 
 
 

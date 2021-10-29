@@ -48,7 +48,7 @@ if( isset( $_GET['user_id'] ) ){
 				<div class="item">XXX <br>Following</div>
 				<?php 
 				//if this profile belongs to the logged in user, show a 'edit profile' button, otherwise show the follow button
-				if( $user_id == $logged_in_user['user_id'] ){
+				if( $logged_in_user AND $user_id == $logged_in_user['user_id'] ){
 				 ?>
 					<div class="item"><a class="button" href="#">Edit Profile</a></div>
 				<?php }else{?>
